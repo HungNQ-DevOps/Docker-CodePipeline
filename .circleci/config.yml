@@ -37,7 +37,6 @@ jobs:
 workflows:
   commit:
     jobs:
-      - node/test
       - build-and-push:
           requires:
             - "node/test"
