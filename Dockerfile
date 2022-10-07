@@ -1,6 +1,6 @@
 FROM node:16.17.1 AS myapp
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -12,6 +12,6 @@ RUN npm run build
 
 FROM nginx:latest
 
-COPY --from=myapp /usr/src/app/build /usr/share/nginx/html
+COPY --from=myapp /app/build /usr/share/nginx/html
 
 # funny
