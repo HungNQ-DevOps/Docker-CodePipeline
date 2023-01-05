@@ -28,6 +28,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          echo ${{ secrets.AWS_ACCESS_KEY_ID }} ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws s3 rm --recursive s3://${{ env.AWS_S3_BUCKET }}
-          # aws s3 cp --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
+          aws s3 cp --recursive s3://${{ env.AWS_S3_BUCKET }}
