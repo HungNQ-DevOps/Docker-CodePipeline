@@ -23,16 +23,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      # - name: Deploy
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      # - run:
-      #       aws s3 rm --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
-      #       aws s3 cp --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
-
-      - name: Summary
-        run: |
-          echo "This job is now running on a ${{ runner.os }}"
-          echo "Your branch is ${{ github.repository }} / ${{ github.ref }}"
-          echo "🍏 This job's status is ${{ job.status }}."
+      - name: Deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run:
+          aws s3 rm --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
+          aws s3 cp --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
