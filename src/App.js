@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> Test commit! {test}
+          Edit <code>src/App.js</code> Test deploy! {test}
         </p>
         <p>Success!!!</p>
         <a
