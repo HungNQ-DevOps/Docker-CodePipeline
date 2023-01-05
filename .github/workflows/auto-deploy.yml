@@ -14,7 +14,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      # - name: Checkout
       - uses: actions/checkout@v3
 
       # - name: Install dependencies
@@ -31,7 +31,7 @@ jobs:
       #       aws s3 rm --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
       #       aws s3 cp --recursive --region ${{ env.AWS_REGION }} s3://${{ env.AWS_S3_BUCKET }}
 
-      - name: Summary
-      - run: echo "This job is now running on a ${{ runner.os }}"
-      - run: echo "Your branch is ${{ github.repository }} / ${{ github.ref }}"
+      # - name: Summary
+      # - run: echo "This job is now running on a ${{ runner.os }}"
+      # - run: echo "Your branch is ${{ github.repository }} / ${{ github.ref }}"
       - run: echo "🍏 This job's status is ${{ job.status }}."
