@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
+console.log(process.env.REACT_APP_TEXT + 5)
+let test = process.env.REACT_APP_TEXT
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> Test commit!
+          Edit <code>src/App.js</code> Test commit! {test}
         </p>
         <p>Success!!!</p>
         <a
