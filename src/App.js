@@ -1,18 +1,31 @@
-import logo from './logo.svg';
+import React, { useEffect, useState} from 'react';
+import axios from 'axios';
+// import logo from './logo.svg';
 import './App.css';
 
-console.log(process.env.REACT_APP_TEXT + 5)
-let test = process.env.REACT_APP_TEXT
+const App = () => {
+  const [data, setData] = useState([])
 
-function App() {
+  useEffect(() => {
+    const fetchData = async () =>{
+      try {
+        const {data: response} = await axios.get(process.env.REACT_APP_BASE_API_URL);
+        setData(response);
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Edit <code>src/App.js</code> Test deploy 5th! {test}
+          Deploy <code>Reactjs</code> !!! {data}
         </p>
-        <p>Success!!! 3th</p>
+        <p>Success!!!</p>
         <a
           className="App-link"
           href="https://reactjs.org"
