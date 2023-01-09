@@ -23,9 +23,10 @@ const App = () => {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          Deploy <code>Reactjs</code> !!! {data}
+          Deploy <code>Reactjs</code> !!!
         </p>
         <p>Success!!!</p>
+        <p>{data}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
